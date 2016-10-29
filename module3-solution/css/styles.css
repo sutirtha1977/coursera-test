@@ -1,0 +1,78 @@
+body {
+  font-size: 16px;
+  color: #fff; /* Change Color */
+  background-color: #F4BE76;
+  font-family: 'Oxygen', sans-serif;
+}
+
+/** HEADER **/
+#header-nav{
+    background-color: #ADE7C9; /* Change Color */
+    border-radius: 0;
+    border: 0;
+}
+.navbar-brand{
+    /*height: 100px;
+    width: 200px;*/
+}
+.navbar-brand p{ /* Name */
+    font-family: 'Lora' serif;
+    color: #F1270A; /* Change Color */
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #222;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+    text-decoration: none;
+}
+#nav-list {
+    margin-top: 10px;
+}
+#nav-list a {
+    color: #F70505;
+    text-align: center;
+    font-size: 1.2em;
+}
+#nav-list a:hover{
+    background: #E7E7E7;
+}
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+    border: 1px solid #61122f;
+}
+/** END HEADER **/
+/* MAIN CONTENT */
+#content-description{
+    background-color: #A7B1E6;
+    padding: 5px 30px;
+    margin: 10px 10px 30px 10px;
+}
+#main-content h2{
+    margin-top: -5px;
+}
+#main-content h2, #content-description h3, #content-description span {
+    color: #000000;
+}
+/* END MAIN CONTENT */
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+    #content-description {
+        margin: 10px 0 30px 0;
+    }
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+    #content-description {
+        margin: 10px 50px 30px 50px;
+    }
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+    #content-description {
+        margin: 10px 40px 30px 40px;
+    }
+}
+
+
