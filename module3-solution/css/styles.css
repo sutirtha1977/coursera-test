@@ -1,24 +1,20 @@
 body {
   font-size: 16px;
-  color: #fff; /* Change Color */
-  background-color: #F4BE76;
+  color: #fff;
+  /*background-color: #F4BE76;*/
   font-family: 'Oxygen', sans-serif;
 }
 
 /** HEADER **/
 #header-nav{
-    background-color: #ADE7C9; /* Change Color */
+    background-color: #ADE7C9;
     border-radius: 0;
     border: 0;
 }
-.navbar-brand{
-    /*height: 100px;
-    width: 200px;*/
-}
-.navbar-brand p{ /* Name */
+.navbar-brand p{
     font-family: 'Lora' serif;
-    color: #F1270A; /* Change Color */
-    font-size: 1.5em;
+    color: #F1270A;
+    font-size: 2em;
     font-weight: bold;
     text-shadow: 1px 1px 1px #222;
 }
@@ -41,38 +37,37 @@ body {
 }
 /** END HEADER **/
 /* MAIN CONTENT */
-#content-description{
-    background-color: #A7B1E6;
+#chk-description{
+    background-color: #B5B808;
+}
+#sus-description {
+    background-color: #E36C0F;
+}
+#beef-description {
+    background-color: #12A006;
+}
+#chk-description, #beef-description, #sus-description{
     padding: 5px 30px;
-    margin: 10px 10px 30px 10px;
+    margin-bottom: 20px;
 }
 #main-content h2{
     margin-top: -5px;
+    color: #690404;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #222;
 }
-#main-content h2, #content-description h3, #content-description span {
+#chk-description h3, #beef-description h3, #sus-description h3{
     color: #000000;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #222;
+}
+#chk-description span, #beef-description span, #sus-description span {
+    color: #5A0408;
+}
+#chk-description a, #beef-description a, #sus-description a {
+    color: #0713A9;
 }
 /* END MAIN CONTENT */
 
-/********** Medium devices only **********/
-@media (min-width: 992px) and (max-width: 1199px) {
-    #content-description {
-        margin: 10px 0 30px 0;
-    }
-}
-
-/********** Small devices only **********/
-@media (min-width: 768px) and (max-width: 991px) {
-    #content-description {
-        margin: 10px 50px 30px 50px;
-    }
-}
-
-/********** Extra small devices only **********/
-@media (max-width: 767px) {
-    #content-description {
-        margin: 10px 40px 30px 40px;
-    }
-}
 
 
