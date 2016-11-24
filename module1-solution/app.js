@@ -15,6 +15,7 @@
     $scope.displayMessage = function () {
       if ($scope.inputValue == "") {
         $scope.message = "Please enter data first";
+        console.log("Sutirtha");
         $scope.emptyMessage = "";
         changeColor(0);
       } else {
