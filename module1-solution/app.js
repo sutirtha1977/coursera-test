@@ -15,6 +15,7 @@
     $scope.displayMessage = function () {
       if ($scope.inputValue == "") {
         $scope.message = "Please enter data first";
+        $scope.emptyMessage = "";
         changeColor(0);
       } else {
         var intCount = 0;
