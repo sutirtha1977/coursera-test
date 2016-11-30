@@ -14,7 +14,6 @@
 
     itemToBuy.listToBuy = ShoppingListCheckOffService.getItem(true);
 
-    // itemToBuy.removeItem = function (itemIndex,name,quantity){
     itemToBuy.removeItem = function (itemIndex){
       ShoppingListCheckOffService.addItem(itemToBuy.listToBuy[itemIndex].name,itemToBuy.listToBuy[itemIndex].quantity);
       ShoppingListCheckOffService.removeItem(itemIndex);
