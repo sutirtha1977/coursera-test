@@ -4,6 +4,7 @@
 angular.module('ShoppingListDirectiveApp', [])
 .controller('ShoppingListController', ShoppingListController)
 .factory('ShoppingListFactory', ShoppingListFactory)
+// .controller('ShoppingListDirectiveController', ShoppingListDirectiveController)
 .directive('shoppingList', ShoppingListDirective);
 
 
@@ -12,12 +13,11 @@ function ShoppingListDirective() {
     templateUrl: 'shoppingList.html',
     scope: {
       items: '<',
-      myTitle: '@title',
-      badRemove: '=',
-      onRemove: '&'
+      title: '@'
     },
+    // controller: 'ShoppingListDirectiveController as list',
     controller: ShoppingListDirectiveController,
-    controllerAs: 'listDir',
+    controllerAs: 'list',
     bindToController: true
   };
 
@@ -61,10 +61,8 @@ function ShoppingListController(ShoppingListFactory) {
   };
 
   list.removeItem = function (itemIndex) {
-    console.log("'this' is: ", this);
-    this.lastRemoved = "Last item removed was " + this.items[itemIndex].name;
     shoppingList.removeItem(itemIndex);
-    this.title = origTitle + " (" + list.items.length + " items )";
+    list.title = origTitle + " (" + list.items.length + " items )";
   };
 }
 

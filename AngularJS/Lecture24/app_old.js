@@ -22,11 +22,10 @@ function ShoppingListController(ShoppingListService) {
   list.removeItem = function (itemIndex) {
     ShoppingListService.removeItem(itemIndex);
   };
-
 }
 
 
-ShoppingListService.$inject = ['$q', 'WeightLossFilterService']
+ShoppingListService.$inject = ['$q', 'WeightLossFilterService'];
 function ShoppingListService($q, WeightLossFilterService) {
   var service = this;
 
@@ -36,21 +35,23 @@ function ShoppingListService($q, WeightLossFilterService) {
   // service.addItem = function (name, quantity) {
   //   var promise = WeightLossFilterService.checkName(name);
   //
-  //   promise.then(function(response){
+  //   promise.then(function (response) {
   //     var nextPromise = WeightLossFilterService.checkQuantity(quantity);
-  //     nextPromise.then(function(result){
+  //
+  //     nextPromise.then(function (result) {
   //       var item = {
   //         name: name,
   //         quantity: quantity
   //       };
   //       items.push(item);
-  //     }, function(errorResponse){
+  //     }, function (errorResponse) {
   //       console.log(errorResponse.message);
   //     });
-  //   }, function(errorResponse){
+  //   }, function (errorResponse) {
   //     console.log(errorResponse.message);
   //   });
   // };
+
 
   // service.addItem = function (name, quantity) {
   //   var promise = WeightLossFilterService.checkName(name);
@@ -68,13 +69,15 @@ function ShoppingListService($q, WeightLossFilterService) {
   //   })
   //   .catch(function (errorResponse) {
   //     console.log(errorResponse.message);
-  //   })
+  //   });
   // };
+
+
   service.addItem = function (name, quantity) {
     var namePromise = WeightLossFilterService.checkName(name);
     var quantityPromise = WeightLossFilterService.checkQuantity(quantity);
 
-    $q.all([namePromise,quantityPromise]).
+    $q.all([namePromise, quantityPromise]).
     then(function (response) {
       var item = {
         name: name,
@@ -85,11 +88,10 @@ function ShoppingListService($q, WeightLossFilterService) {
     .catch(function (errorResponse) {
       console.log(errorResponse.message);
     });
-
   };
 
-  service.removeItem = function (itemIdex) {
-    items.splice(itemIdex, 1);
+  service.removeItem = function (itemIndex) {
+    items.splice(itemIndex, 1);
   };
 
   service.getItems = function () {
@@ -97,48 +99,52 @@ function ShoppingListService($q, WeightLossFilterService) {
   };
 }
 
-WeightLossFilterService.$inject = ['$q', '$timeout']
-function WeightLossFilterService($q,$timeout){
+
+WeightLossFilterService.$inject = ['$q', '$timeout'];
+function WeightLossFilterService($q, $timeout) {
   var service = this;
 
   service.checkName = function (name) {
-      var deferred = $q.defer();
-
-      var result = {
-        message: ""
-      };
-
-      $timeout(function () {
-        if (name.toLowerCase().indexOf('cookie') === -1) {
-          deferred.resolve(result);
-        }else {
-          result.message = "Stay away from cookies!!!";
-          deferred.reject(result);
-        }
-      }, 3000);
-
-      return deferred.promise;
-  };
-
-  service.checkQuantity = function (quantity) {
     var deferred = $q.defer();
 
     var result = {
       message: ""
     };
+
     $timeout(function () {
+      // Check for cookies
+      if (name.toLowerCase().indexOf('cookie') === -1) {
+        deferred.resolve(result)
+      }
+      else {
+        result.message = "Stay away from cookies, Yaakov!";
+        deferred.reject(result);
+      }
+    }, 3000);
+
+    return deferred.promise;
+  };
+
+
+  service.checkQuantity = function (quantity) {
+    var deferred = $q.defer();
+    var result = {
+      message: ""
+    };
+
+    $timeout(function () {
+      // Check for too many boxes
       if (quantity < 6) {
         deferred.resolve(result);
-      }else {
-        result.message = "That's too much!!!";
+      }
+      else {
+        result.message = "That's too much, Yaakov!";
         deferred.reject(result);
       }
     }, 1000);
 
     return deferred.promise;
-
-  }
-
+  };
 }
 
 })();

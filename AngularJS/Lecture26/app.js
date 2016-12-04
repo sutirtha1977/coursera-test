@@ -8,7 +8,6 @@ angular.module('ShoppingListDirectiveApp', [])
 .directive('listItemDescription', ListItemDescription)
 .directive('listItem', ListItem);
 
-
 function ListItem() {
   var ddo = {
     templateUrl: 'listItem.html'
@@ -17,7 +16,6 @@ function ListItem() {
   return ddo;
 }
 
-
 function ListItemDescription() {
   var ddo = {
     template: '{{ item.quantity }} of {{ item.name }}'
@@ -25,7 +23,6 @@ function ListItemDescription() {
 
   return ddo;
 }
-
 
 // LIST #1 - controller
 ShoppingListController1.$inject = ['ShoppingListFactory'];
@@ -70,7 +67,7 @@ function ShoppingListController2(ShoppingListFactory) {
       list.errorMessage = error.message;
     }
 
-  };
+  }
 
   list.removeItem = function (itemIndex) {
     shoppingList.removeItem(itemIndex);

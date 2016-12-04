@@ -5,10 +5,10 @@
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <title>Directives with 'restrict'</title>
+    <title>Directive with 'restrict'</title>
   </head>
   <body>
-    <h1>Directives with 'restrict'</h1>
+    <h1>Directive with 'restrict'</h1>
 
     <!-- LIST #1 - unlimited items -->
     <div id="list1" ng-controller='ShoppingListController1 as list'>
@@ -19,7 +19,7 @@
       <ol>
         <li list-item ng-repeat="item in list.items"></li>
       </ol>
-      <div ng-if="list.errorMessage" class="error">Error: {{list.errorMessage}}</div>
+      <div class="error">Error: {{list.errorMessage}}</div>
     </div>
 
     <!-- LIST #2 (limited to 3 items) -->
@@ -31,7 +31,7 @@
       <ol>
         <list-item ng-repeat="item in list.items"></list-item>
       </ol>
-      <div ng-if="list.errorMessage" class="error">Error: {{list.errorMessage}}</div>
+      <div class="error">Error: {{list.errorMessage}}</div>
     </div>
 
   </body>

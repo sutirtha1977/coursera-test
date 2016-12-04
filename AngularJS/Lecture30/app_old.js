@@ -17,7 +17,7 @@ function ShoppingListDirective() {
       onRemove: '&'
     },
     controller: ShoppingListDirectiveController,
-    controllerAs: 'listDir',
+    controllerAs: 'list',
     bindToController: true
   };
 

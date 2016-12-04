@@ -7,7 +7,6 @@ angular.module('ShoppingListDirectiveApp', [])
 .factory('ShoppingListFactory', ShoppingListFactory)
 .directive('shoppingList', ShoppingList);
 
-
 function ShoppingList() {
   var ddo = {
     templateUrl: 'shoppingList.html',
@@ -20,7 +19,6 @@ function ShoppingList() {
   return ddo;
 }
 
-
 // LIST #1 - controller
 ShoppingListController1.$inject = ['ShoppingListFactory'];
 function ShoppingListController1(ShoppingListFactory) {
@@ -31,19 +29,19 @@ function ShoppingListController1(ShoppingListFactory) {
 
   list.items = shoppingList.getItems();
   var origTitle = "Shopping List #1";
-  list.title = origTitle + " (" + list.items.length + " items )";
+  list.title = origTitle + " (" + list.items.length + " items)";
 
   list.itemName = "";
   list.itemQuantity = "";
 
   list.addItem = function () {
     shoppingList.addItem(list.itemName, list.itemQuantity);
-    list.title = origTitle + " (" + list.items.length + " items )";
-  };
+    list.title = origTitle + " (" + list.items.length + " items)";
+  }
 
   list.removeItem = function (itemIndex) {
     shoppingList.removeItem(itemIndex);
-    list.title = origTitle + " (" + list.items.length + " items )";
+    list.title = origTitle + " (" + list.items.length + " items)";
   };
 }
 
@@ -68,7 +66,7 @@ function ShoppingListController2(ShoppingListFactory) {
       list.errorMessage = error.message;
     }
 
-  };
+  }
 
   list.removeItem = function (itemIndex) {
     shoppingList.removeItem(itemIndex);

@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <style> body { font-size: 1.2em; }</style>
-    <title>Custom Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Shopping List with a Promise</title>
   </head>
   <body>
     <h1>Shopping List with a Promise</h1>
+
     <div ng-controller='ShoppingListController as list'>
       <h3>Shopping List</h3>
       <input type="text" ng-model="list.itemName" placeholder="item name">
@@ -21,5 +22,6 @@
         </li>
       </ol>
     </div>
+
   </body>
 </html>

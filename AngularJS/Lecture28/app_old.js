@@ -2,47 +2,28 @@
 'use strict';
 
 angular.module('ShoppingListDirectiveApp', [])
-.controller('ShoppingListController', ShoppingListController)
+.controller('ShoppingListController1', ShoppingListController1)
+.controller('ShoppingListController2', ShoppingListController2)
 .factory('ShoppingListFactory', ShoppingListFactory)
-.directive('shoppingList', ShoppingListDirective);
+.directive('shoppingList', ShoppingList);
 
 
-function ShoppingListDirective() {
+function ShoppingList() {
   var ddo = {
     templateUrl: 'shoppingList.html',
     scope: {
-      items: '<',
-      myTitle: '@title',
-      badRemove: '=',
-      onRemove: '&'
-    },
-    controller: ShoppingListDirectiveController,
-    controllerAs: 'listDir',
-    bindToController: true
+      list: '=myList',
+      title: '@title'
+    }
   };
 
   return ddo;
 }
 
 
-function ShoppingListDirectiveController() {
-  var list = this;
-
-  list.cookiesInList = function () {
-    for (var i = 0; i < list.items.length; i++) {
-      var name = list.items[i].name;
-      if (name.toLowerCase().indexOf("cookie") !== -1) {
-        return true;
-      }
-    }
-
-    return false;
-  };
-}
-
-
-ShoppingListController.$inject = ['ShoppingListFactory'];
-function ShoppingListController(ShoppingListFactory) {
+// LIST #1 - controller
+ShoppingListController1.$inject = ['ShoppingListFactory'];
+function ShoppingListController1(ShoppingListFactory) {
   var list = this;
 
   // Use factory to create new shopping list service
@@ -61,10 +42,36 @@ function ShoppingListController(ShoppingListFactory) {
   };
 
   list.removeItem = function (itemIndex) {
-    console.log("'this' is: ", this);
-    this.lastRemoved = "Last item removed was " + this.items[itemIndex].name;
     shoppingList.removeItem(itemIndex);
-    this.title = origTitle + " (" + list.items.length + " items )";
+    list.title = origTitle + " (" + list.items.length + " items )";
+  };
+}
+
+
+// LIST #2 - controller
+ShoppingListController2.$inject = ['ShoppingListFactory'];
+function ShoppingListController2(ShoppingListFactory) {
+  var list = this;
+
+  // Use factory to create new shopping list service
+  var shoppingList = ShoppingListFactory(3);
+
+  list.items = shoppingList.getItems();
+
+  list.itemName = "";
+  list.itemQuantity = "";
+
+  list.addItem = function () {
+    try {
+      shoppingList.addItem(list.itemName, list.itemQuantity);
+    } catch (error) {
+      list.errorMessage = error.message;
+    }
+
+  };
+
+  list.removeItem = function (itemIndex) {
+    shoppingList.removeItem(itemIndex);
   };
 }
 
