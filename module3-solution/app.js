@@ -44,6 +44,7 @@ function NarrowItDownController(MenuSearchService) {
           menu.errorMessage = error.message;
       });
     }else{
+      menu.found = "";
       menu.errorMessage = "Nothing found";
     }
   }
