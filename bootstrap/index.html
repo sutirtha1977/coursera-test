@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lanf="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic Grid System</title>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .show-grid [class^=col-]{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #eee;
+        border: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row show-grid">
+        <div class="col-md-8 col-md-push-4">The first column is 8 wide pushed over 4</div>
+        <div class="col-md-4 col-md-pull-8">The second column is 4 wide pulled back 8</div>
+      </div>
+    </div>
+    <p>
+      <span class="label label-default">Default</span>
+      <span class="label label-primary">Primary</span>
+      <span class="label label-success">Success</span>
+      <span class="label label-info">Info</span>
+      <span class="label label-warning">Warning</span>
+      <span class="label label-danger">Danger</span>
+    </p>
+    <br>
+    <a href="#">Inbox <span class="badge">4</span></a>
+    <br>
+    <p class="well">And this content is inside a well</p>
+    <p class="well well-lg">And this content is inside a large well</p>
+    <p class="well well-sm">And this content is inside a small well</p>
+    <div class="well">
+      <blockquote>asdasdasdsadasdasdadasdas</blockquote>
+    </div>
+  </body>
+</html>
