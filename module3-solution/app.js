@@ -25,6 +25,7 @@ function FoundListDirectiveController() {
   var foundList = this;
 }
 
+
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var menu = this;
