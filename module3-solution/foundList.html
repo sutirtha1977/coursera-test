@@ -1,40 +1,24 @@
-<!-- <ul>
-  <li ng-repeat="item in foundList.items">
-      <div class="row">
-        <div class="col-sm-1">
-          {{ item.id }}
-        </div>
-        <div class="col-sm-1">
-          {{ item.short_name }}
-        </div>
-        <div class="col-sm-8">
-          {{ item.description }}
-        </div>
-        <div class="col-sm-2">
+<div class="container">
+  <table class="table table-striped" ng-if="foundList.items.length">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Short Name</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="item in foundList.items">
+      <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.short_name }}</td>
+        <td>{{ item.description }}</td>
+        <td>
           <button ng-click="foundList.onRemove({index: $index});"
               class="btn btn-primary">Don't want this one!</button>
-        </div>
-      </div>
-  </li>
-</ul> -->
-<table class="table table-striped" ng-if="foundList.items.length">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Short Name</th>
-      <th>Description</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody ng-repeat="item in foundList.items">
-    <tr>
-      <td>{{ item.id }}</td>
-      <td>{{ item.short_name }}</td>
-      <td>{{ item.description }}</td>
-      <td>
-        <button ng-click="foundList.onRemove({index: $index});"
-            class="btn btn-primary">Don't want this one!</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div ng-if="listfound.errorMessage" class="alert alert-danger">{{listfound.errorMessage}}</div>
+</div>

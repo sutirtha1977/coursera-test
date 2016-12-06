@@ -20,6 +20,7 @@ function FoundItems() {
   };
   return ddo;
 }
+FoundListDirectiveController.$inject = [];
 function FoundListDirectiveController() {
   var foundList = this;
 }
@@ -27,6 +28,8 @@ function FoundListDirectiveController() {
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var menu = this;
+  menu.searchValue = "";
+  menu.errorMessage = "";
 
   menu.getMatchedMenuItems = function () {
     if(menu.searchValue){
@@ -44,13 +47,16 @@ function NarrowItDownController(MenuSearchService) {
           menu.errorMessage = error.message;
       });
     }else{
-      menu.found = "";
+      menu.found = [];
       menu.errorMessage = "Nothing found";
     }
   }
 
   menu.removeItem = function (itemIndex) {
     MenuSearchService.removeItem(itemIndex);
+    if(!menu.found.length){
+      menu.errorMessage = "Nothing found";
+    }
   }
 }
 

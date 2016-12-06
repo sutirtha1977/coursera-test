@@ -19,10 +19,7 @@
     </div>
     <div class="clearfix"></div>
     <div ng-if="listfound.errorMessage" class="alert alert-danger">{{listfound.errorMessage}}</div>
-    <div ng-if="!listfound.found.length && !listfound.errorMessage" class="alert alert-info">Search menu!!!</div>
-    <div class="container">
-      <found-items found-item="listfound.found" on-remove="listfound.removeItem(index)"></found-items>
-    </div>
+    <found-items found-item="listfound.found" on-remove="listfound.removeItem(index)"></found-items>
   </div>
 </body>
 </html>
