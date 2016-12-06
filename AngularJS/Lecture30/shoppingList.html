@@ -2,7 +2,6 @@
 <ol>
   <li ng-repeat="item in listDir.items">
     {{ item.quantity }} of {{ item.name }}
-    <button ng-click="listDir.badRemove($index);">Bad Remove Item</button>
     <button ng-click="listDir.onRemove({index: $index});">Remove Item</button>
   </li>
 </ol>

@@ -20,6 +20,7 @@ div.row {
 }
 .container{
   clear: both;
+  text-transform: capitalize;
 }
 .loader {
   display: none;

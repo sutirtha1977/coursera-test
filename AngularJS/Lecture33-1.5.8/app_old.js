@@ -22,16 +22,16 @@ function ShoppingListComponentController($element) {
   $ctrl.cookiesInList = function () {
     for (var i = 0; i < $ctrl.items.length; i++) {
       var name = $ctrl.items[i].name;
-
       if (name.toLowerCase().indexOf("cookie") !== -1) {
         return true;
       }
     }
+
     return false;
   };
 
   $ctrl.remove = function (myIndex) {
-    $ctrl.onRemove({index: myIndex});
+    $ctrl.onRemove({ index: myIndex });
   };
 
   $ctrl.$onInit = function () {
@@ -39,20 +39,24 @@ function ShoppingListComponentController($element) {
   };
 
   $ctrl.$onChanges = function (changeObj) {
-    console.log(changeObj);
-  };
+    console.log("Changes: ", changeObj);
+  }
 
   $ctrl.$doCheck = function () {
-    if($ctrl.items.length !== totalItems){
+    if ($ctrl.items.length !== totalItems) {
+      console.log("# of items changed. Checking for Cookies!");
       totalItems = $ctrl.items.length;
-      if($ctrl.cookiesInList()){
+      if ($ctrl.cookiesInList()) {
+        console.log("Oh, NO! COOKIES!!!!!");
         var warningElem = $element.find('div.error');
         warningElem.slideDown(900);
-      }else {
+      }
+      else {
+        console.log("No cookies here. Move right along!");
         var warningElem = $element.find('div.error');
         warningElem.slideUp(900);
       }
-    };
+    }
   };
 }
 
@@ -74,10 +78,9 @@ function ShoppingListController(ShoppingListFactory) {
   list.addItem = function () {
     shoppingList.addItem(list.itemName, list.itemQuantity);
     list.title = origTitle + " (" + list.items.length + " items )";
-  };
+  }
 
   list.removeItem = function (itemIndex) {
-    console.log("'this' is: ", this);
     this.lastRemoved = "Last item removed was " + this.items[itemIndex].name;
     shoppingList.removeItem(itemIndex);
     this.title = origTitle + " (" + list.items.length + " items )";
