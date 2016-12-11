@@ -1,0 +1,10 @@
+<ol>
+  <li ng-repeat="item in $ctrl.items"
+   ui-sref="items({shortName: item.short_name})"
+   ng-mouseover="hoverActive = true" ng-mouseleave="hoverActive = false">
+      {{ item.name }}
+      <span ng-show="hoverActive" class="price">
+        [ID: {{ item.id }} Short Name: {{ item.short_name }}]
+      </span>
+  </li>
+</ol>

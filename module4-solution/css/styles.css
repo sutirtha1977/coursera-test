@@ -1,0 +1,44 @@
+body {
+  font-size: 1.2em;
+  /*background-color: #F7B6B5;*/
+}
+a.main {
+  font-size: 1.5em;
+}
+.page-header{
+    text-align: center;
+    /*background-color: #C11B18;*/
+}
+.breadcrumb{
+  font-size: 1.2em;
+}
+.price{
+  font-size: 0.8em;
+  color:red;
+}
+.error {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
+.loading-icon {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+}
+
+ol {
+  text-transform: capitalize;
+  font-size: 1.2em;
+}
+li[ui-sref]:hover {
+  display: inline-block;
+  cursor: pointer;
+  border: solid black 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-style: italic;
+  font-weight: bold;
+  color: red;
+}

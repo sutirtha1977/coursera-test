@@ -1,0 +1,9 @@
+<ul class="breadcrumb">
+  <!-- <li><a ui-sref="home">Home</a></li> -->
+  <li><a ui-sref="home" class="glyphicon glyphicon-home"></a></li>
+  <li class="active">
+    <span class="glyphicon glyphicon glyphicon-cutlery"></span> Menu Category List
+    <span class="badge">{{catList.items.length}}</span></li>
+</ul>
+<h3>Click on individual Menu Categories to view the details!!!</h3>
+<categories items="catList.items"></categories>

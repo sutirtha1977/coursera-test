@@ -1,0 +1,10 @@
+<ul class="breadcrumb">
+  <!-- <li><a ui-sref="home">Home</a></li> -->
+  <li><a ui-sref="home" class="glyphicon glyphicon-home"></a></li>
+  <li><span class="glyphicon glyphicon glyphicon-cutlery"></span>
+    <a ui-sref="categories">Menu Category List</a></li>
+  <li class="active"><span class="glyphicon glyphicon-list-alt"></span>
+    Category Item Detail  <span class="badge">{{catDetail.items.length}}</span></li>
+</ul>
+
+<items item="catDetail.items"></items>
