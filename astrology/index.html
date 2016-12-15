@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" ng-app='AstrologyApp'>
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <script src="lib/jquery-3.1.0.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="src/calculation.module.js"></script>
+    <script src="src/calculation.controller.js"></script>
+    <script src="src/calculation.service.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+<body>
+   <div class="container" ng-controller='CalculationController as listfound'>
+     <h1>Astrology Calculations</h1>
+    <div class="form-group">
+      <input type="text" ng-model="listfound.searchValue" placeholder="search term" class="form-control">
+    </div>
+    <div class="form-group narrow-button">
+      <button ng-click="listfound.getMatchedMenuItems();" class="btn btn-primary">Narrow It Down For Me!</button>
+    </div>
+    <div class="clearfix"></div>
+    <div ng-if="listfound.errorMessage" class="alert alert-danger">{{listfound.errorMessage}}</div>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Short Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody ng-repeat="item in listfound.found">
+          <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.short_name }}</td>
+            <td>{{ item.description }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</body>
+</html>

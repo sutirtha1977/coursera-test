@@ -1,5 +1,5 @@
 <div class="container">
-  <table class="table table-striped" ng-if="foundList.items.length">
+  <table class="table table-striped" ng-if="$ctrl.items.length">
     <thead>
       <tr>
         <th>Name</th>
@@ -8,13 +8,13 @@
         <th></th>
       </tr>
     </thead>
-    <tbody ng-repeat="item in foundList.items">
+    <tbody ng-repeat="item in $ctrl.items">
       <tr>
         <td>{{ item.name }}</td>
         <td>{{ item.short_name }}</td>
         <td>{{ item.description }}</td>
         <td>
-          <button ng-click="foundList.onRemove({index: $index});"
+          <button ng-click="$ctrl.onRemove({index: $index});"
               class="btn btn-primary">Don't want this one!</button>
         </td>
       </tr>

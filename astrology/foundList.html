@@ -1,0 +1,23 @@
+<div class="container">
+  <table class="table table-striped" ng-if="foundList.items.length">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Short Name</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="item in foundList.items">
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.short_name }}</td>
+        <td>{{ item.description }}</td>
+        <td>
+          <button ng-click="foundList.onRemove({index: $index});"
+              class="btn btn-primary">Don't want this one!</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

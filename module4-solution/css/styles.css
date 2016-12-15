@@ -2,10 +2,10 @@ body {
   font-size: 1.2em;
   /*background-color: #F7B6B5;*/
 }
-a.main {
+/*a.main {
   font-size: 1.5em;
-}
-.page-header{
+}*/
+.jumbotron{
     text-align: center;
     /*background-color: #C11B18;*/
 }
