@@ -1,8 +1,0 @@
-<ol>
-  <li ng-repeat="item in $ctrl.item">
-    <dl ng-mouseover="hoverActive = true" ng-mouseleave="hoverActive = false">
-      <dt>{{ item.name }}<span ng-show="hoverActive" class="price"> [Price: $ {{ item.price_large }}]</span> </dt>
-      <dd>{{ item.description }}</dd>
-    </dl>
-  </li>
-</ol>
