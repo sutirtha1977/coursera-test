@@ -1,8 +1,0 @@
-<h3>Title: {{ listDir.myTitle }}</h3>
-<ol>
-  <li ng-repeat="item in listDir.items">
-    {{ item.quantity }} of {{ item.name }}
-    <button ng-click="listDir.onRemove({index: $index});">Remove Item</button>
-  </li>
-</ol>
-<div class="error" ng-if="listDir.cookiesInList()">WARNING! WARNING! COOKIES DETECTED!</div>
